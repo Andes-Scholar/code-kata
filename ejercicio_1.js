@@ -16,7 +16,7 @@ y devolver el puntaje total de acuerdo al scoring descripto anteriormente.
 
 Un array vacío debe devolver como resultado 0 (cero)
 
-Examples:
+Ejemplos:
 partida_dardos( [1, 5, 11] )    =>  15
 partida_dardos( [15, 20, 30] )  =>  0
 partida_dardos( [1, 2, 3, 4] )  =>  140
