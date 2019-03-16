@@ -10,7 +10,7 @@ precondiciones:
 1- Ud. siempre recibirá un array válido.
 2- Sólo será exactamente una letra la que deba ser encontrada.
 3- La longitud del array como mínimo es 2.
-4- Que contemple la posibilidad de ser key sensitive es opcional.
+4- Que contemple la posibilidad de ser case sensitive es opcional.
 
 Ejemplo:
 
