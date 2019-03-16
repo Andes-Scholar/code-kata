@@ -19,8 +19,8 @@ precondiciones:
 Ejemplos: Suponiendo que la función se llama tiempoEspera
 
 tiempoEspera([5,3,4], 1) --> deberá devolver 12 ya que como sólo hay una caja se suman la cantidad de minutos consumidos por cliente.
-queueTime([10,2,3,3], 2) --> deberá devolver 10 ya que hay 2 cajas. Los clientes 2do, 3ero y 4to finalizan antes que el 1ero.
-queueTime([2,3,10], 2) --> deberá devolver 12
+tiempoEspera([10,2,3,3], 2) --> deberá devolver 10 ya que hay 2 cajas. Los clientes 2do, 3ero y 4to finalizan antes que el 1ero.
+tiempoEspera([2,3,10], 2) --> deberá devolver 12
 
 Utilice estos ejemplos como resultados válidos para testear su aplicación.
 
