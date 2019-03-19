@@ -32,8 +32,8 @@ function busca_letra(arreglo){
         if (letra.charCodeAt(0)!=numero){
             return String.fromCharCode(numero);
         }
-    }
-    return "No falta ninguna letra."
+}
+return "No falta ninguna letra.";
 }
 
 console.log(busca_letra(['a','b','c','d','f']));
