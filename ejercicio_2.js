@@ -21,3 +21,31 @@ Ejemplo:
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 
 */
+var alfabeto = 'abcdefghijklnopqrstuvwxyz';
+var arreglo = ['a','b','c','d','f'];
+
+function main(arreglo){
+
+    var primerCaracter = -1;
+var result='';
+    if(arreglo.length < 2){
+        return 'error, muy corto';
+    }
+    for(var index in alfabeto){
+        if(arreglo[0].toLowerCase() == alfabeto[index]){           
+            primerCaracter = index;       
+        }
+    }
+
+    for(var i = 0; i < arreglo.length ; i++){
+        if(i+1 < arreglo.length ){     
+            if(arreglo[i+1]!=alfabeto[ parseInt(primerCaracter,10)+1]){
+               return alfabeto[parseInt(primerCaracter,10)+1];                
+            }
+        }
+        primerCaracter++;
+    }
+}
+
+console.log( main(['a','b','c','d','f']));
+console.log( main(['O','Q','R','S']));

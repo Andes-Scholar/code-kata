@@ -27,3 +27,60 @@ Utilice estos ejemplos como resultados válidos para testear su aplicación.
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 
 */
+
+
+function main(cola, cantCajas){
+var cantCajasLibres = cantCajas;
+
+var clientesEnCaja = [];
+var iterador =0;
+for (var index in cola){
+    clientesEnCaja[index]=0;
+}
+var acumulador = 0;
+while(SeAtendieronTodos(cola)>0){
+   // while(iterador < 5){  
+        iterador++;
+      
+    if(cantCajasLibres>0){
+        for(var index in clientesEnCaja){
+            if(cola[index]>0 && clientesEnCaja[index]==0 && cantCajasLibres >0){
+                clientesEnCaja[index]=1;
+                cantCajasLibres-=1;
+            }
+        }
+    }
+    
+    for(var index in cola){
+        if(clientesEnCaja[index]==1){
+            if(cola[index]==0){
+                cantCajasLibres+=1;
+                clientesEnCaja[index] =0;
+                for(var index in clientesEnCaja){
+                    if(cola[index]>0 && clientesEnCaja[index]==0 && cantCajasLibres >0){
+                        clientesEnCaja[index]=1;
+                        cantCajasLibres-=1;
+                    }
+                }
+            }
+            else{
+                cola[index]-=1;
+            }           
+        }
+    }
+
+ acumulador +=1;
+}
+return acumulador;
+}
+
+function SeAtendieronTodos(cola){
+    var resultado=0;
+    for(index in cola){
+        resultado += cola[index];
+    }
+    return resultado;
+}
+ console.log( main([5,3,4], 1));
+console.log( main([10,2,3,3], 2));
+ console.log( main([2,3,10], 2));
