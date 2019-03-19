@@ -21,3 +21,22 @@ Ejemplo:
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 
 */
+function busca_letra(arreglo){
+    if (arreglo.length < 2){
+        return "Longitud incorrecta."
+    }
+    var numero=arreglo[0].toUpperCase().charCodeAt(0);
+    for(var indice=1;indice < arreglo.length; indice ++){
+        var letra= arreglo[indice].toUpperCase();
+        numero++;
+        if (letra.charCodeAt(0)!=numero){
+            return String.fromCharCode(numero);
+        }
+    }
+    return "No falta ninguna letra."
+}
+
+console.log(busca_letra(['a','b','c','d','f']));
+console.log(busca_letra(['O','q','R','S','T','U','V','w','X','Y','Z']));
+console.log(busca_letra(['Q','R','S','T','U','V','w','X','Y','Z']));
+console.log(busca_letra(['a']));
