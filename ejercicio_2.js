@@ -21,3 +21,28 @@ Ejemplo:
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 
 */
+
+
+var abcdario=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
+
+
+console.log(revisar(['O','Q','R','S'] ))
+console.log(revisar(['a','b','c','d','f'] ))
+
+function revisar(valor){
+    if(Array.isArray(valor))
+    {
+        var initIndex =  abcdario.indexOf(valor[0].toLowerCase());  
+        // console.log(initIndex);
+
+        for (let i = 0; i < valor.length; i++) {
+            
+            if(valor[i].toLowerCase() !== abcdario[initIndex])
+            {
+                return abcdario[initIndex];
+            }
+
+            initIndex++;
+        }
+    }
+}

@@ -24,3 +24,48 @@ partida_dardos([]) => 0
 
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 */
+
+partida_dardos( [15, 20, 30] )
+
+function partida_dardos(partida) {
+    
+    console.log(calcula(partida));
+    
+
+}
+
+
+function calcula(partida) {
+    var total=0;
+    mayor5=0;
+
+    if (partida.length>0) {
+        
+        partida.forEach(item =>  {
+        
+            // 0 puntos - si el radio está por arriba de 10.
+            if (item >10) {
+                total+=0;
+            }
+
+            // 5 puntos - si el radio está entre 5 y 10 ambos inclusive.
+            if (item >= 5 && item <= 10) {
+                total+=5;
+            }
+
+            // 10 puntos - si el radio es menor estricto que 5.
+            if (item < 5) {
+                total+=10;
+                mayor5++;
+            }
+
+        });
+
+        if (mayor5 == partida.length) {
+            total+=100;
+        }
+    }
+    
+    return total;
+    
+}
