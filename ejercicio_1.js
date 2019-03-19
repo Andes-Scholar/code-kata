@@ -24,3 +24,30 @@ partida_dardos([]) => 0
 
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 */
+var partida_dardo=[];
+var radio;
+var puntos;
+
+partida_dardo=new Array();
+
+
+if (radio > 10){
+puntos=0;
+}
+else
+{
+    if (radio >=5 && radio<=10)
+    {
+        punto+=5;
+    }
+    else radio+=10;
+}
+partida_dardo.push(radio);
+var i;
+while(partida_dardo[i]<5)
+{
+ 
+    i++;
+}
+var l=partida_dardo.length;
+if(i==l) puntos+=100;
