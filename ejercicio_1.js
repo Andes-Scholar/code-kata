@@ -24,3 +24,23 @@ partida_dardos([]) => 0
 
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 */
+function Resultado(Arreglo){
+    if(Arreglo.length == 0 || Arreglo == null){
+        return 0;
+    }
+
+    var Resultado = 0;
+    var PremioMayor = 0;
+    for(var Indice = 0; Indice < Arreglo.length; Indice ++){
+        if(Arreglo[Indice] < 5){
+            Resultado += 10;
+            PremioMayor ++;
+        }else{
+            if(Arreglo[Indice] <= 10){
+                Resultado += 5;
+            }
+        }
+    }
+
+    return Resultado + (PremioMayor == Arreglo.length ? 100 : 0);
+}
