@@ -24,3 +24,39 @@ partida_dardos([]) => 0
 
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 */
+
+partida_dardos( [1, 5, 11] )
+partida_dardos( [15, 20, 30] )
+partida_dardos( [1, 2, 3, 4] )
+partida_dardos([]) 
+
+function partida_dardos(ArrayDardos) {
+    var puntaje = 0;
+    var bonus = true;
+
+    if(ArrayDardos.length > 0){
+        for (let i = 0; i < ArrayDardos.length; i++) {
+            if (ArrayDardos[i] <= 10) {
+                if (ArrayDardos[i] >= 5 && ArrayDardos[i] <= 10) {
+                    puntaje += 5;
+                }
+                else {
+                    puntaje += 10;
+                }
+            }
+            else {
+                bonus = false;
+            }
+        }
+    
+        if (bonus) {
+            puntaje += 100;
+        }
+    }
+
+
+    console.log(puntaje);
+    
+    return puntaje;
+
+}
