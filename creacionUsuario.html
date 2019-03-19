@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <br><br>
+
+        <h4>Manso Crear</h4>
+
+        <br>
+
+        <br>
+
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+
+                <div class="login">
+                    <input id="user" class="form-control" placeholder="usuario" type="text">
+                    <br>
+                    <input id="pass"  class="form-control" placeholder="contraseña"type="password">
+                    <br>
+                    <button id="crear" class="btn btn-success btn-block">Crear</button>                    
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
+
+
+
+<script>
+
+
+    var usuarios = [
+        {
+            user: 'marcelo',
+            pass: 'marce'
+        },
+        {
+            user: 'ivan',
+            pass: '123'
+        }
+
+    ];
+
+    $(function(){
+
+        $('#crear').click(function(){
+
+
+            verificarCampos();
+        });
+
+    });
+
+
+    function verificarCampos(){
+
+        if($('#user').val() == '' || $('#pass').val() == ''){
+            alert('no se ingresó nombre de usuario o contraseña')
+        }else{
+
+            if(!tryCreate()){
+                alert('USUARIO YA EXISTENTE!!');
+            }else{
+
+                alert('usuario creado exitosamente!!!')
+            }
+        }
+    }
+
+
+    function tryCreate(){
+        for(var index in usuarios){
+            if(usuarios[index].user == $('#user').val()){
+                return false;
+            }
+        }
+        return VerificarContraseña();
+    }
+
+    function VerificarContraseña(){
+
+        var re = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/);
+
+       var a = $('#pass').val();
+
+       return re.test(a);
+    }
+
+</script>
