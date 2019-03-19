@@ -21,3 +21,40 @@ Ejemplo:
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 
 */
+
+//['a','b','c','d','f']
+function abc() {
+
+    var completo = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    var letra;
+    
+    var primerLetra = arguments[0];
+    //console.log(primerLetra);
+    var posi=-1;
+    
+    for(j=0; j<completo.length; j++){
+        if(completo[j]==primerLetra){
+            posi=j;
+            break;
+        }
+    }
+    //console.log(posi);
+
+    for(i=0; i<arguments.length; i++){
+        var letraParametro = arguments[i];
+        //console.log(letraParametro);
+        if(letraParametro==completo[posi]){
+            posi++;
+        }
+        else{
+            //console.log(completo[posi]);
+            return completo[posi];
+        }
+    }
+    return('OK');
+
+
+
+}
+
+console.log(abc('a', 'b', 'd'));

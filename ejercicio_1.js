@@ -24,3 +24,42 @@ partida_dardos([]) => 0
 
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 */
+
+
+function partida_dardos(){
+    var i;
+    var sum=0;
+    var resultado=0;
+    var menor=0;
+
+    for(i = 0; i < arguments.length; i++) {
+        //console.log(arguments[i]);
+        //sum += arguments[i];
+
+        if(arguments[i] > 10){
+            resultado+=0;
+        }
+          
+        if(arguments[i]>=5 && arguments[i]<=10){
+            resultado+=5;
+        }
+    
+        if(arguments[i]<5){
+            resultado+=10;
+        }
+
+        if(arguments[i]>5){
+              menor=1;
+        }
+    }
+    if(menor==0){
+        resultado+=100;
+    }
+    
+    console.log(resultado);
+    return resultado;
+}
+
+
+
+partida_dardos(1,2,3,4);

@@ -27,3 +27,48 @@ Utilice estos ejemplos como resultados válidos para testear su aplicación.
 ** IMPORTANTE: Antes de escribir su código, cree un branch con su nombre o el de su equipo. Luego deberá subir al repositorio su resolución!
 
 */
+
+function tiempoEspera(clientes, cajas) {
+
+    //console.log(cajas);
+
+    var sum=0;
+    if(cajas==1){
+        //console.log(clientes.length);
+        for(i=0; i<clientes.length; i++){
+            sum+=clientes[i];
+        }
+    return sum;
+    }
+    else{
+        var tiempoCaja1=0;
+        var tiempoCaja2=0;
+
+        tiempoCaja1= clientes[0];
+        tiempoCaja2= clientes[1];
+
+        for(i=2; i<clientes.length; i++){
+
+            if(tiempoCaja1<tiempoCaja2){
+                tiempoCaja1+=clientes[i];
+            }
+            else{
+                tiempoCaja2+=clientes[i];
+            }
+        }
+
+        if(tiempoCaja1<tiempoCaja2){
+            return tiempoCaja2;
+        }
+        else{
+            return tiempoCaja1;
+        }
+
+
+    }
+
+}
+
+var tiempo= [2,3,10];
+var caja=2;
+console.log(tiempoEspera(tiempo,caja))
