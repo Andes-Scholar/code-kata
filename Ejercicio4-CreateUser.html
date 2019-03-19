@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+    </head>
+<body>
+    <label>Nuevo Usuario</label>
+    <div>
+        <input id="user" type="text" placeholder="Usuario" >
+        <input id="password" type="password" placeholder="Contraseña" >
+    </div>
+    <div>
+        <button onclick="Ingresar();">Crear</button>
+    </div>
+    <div>
+        <label id="lblMensaje" style="color: red;"></label>
+    </div>
+</body>
+
+<script>
+    function Ingresar(){
+        if(!ValidarCampos()){
+            return;
+        }
+
+        document.open("_blank");
+    }
+
+    function ValidarCampos(){
+        document.getElementById("lblMensaje").textContent = "";
+        if(document.getElementById("user").value == ""){
+            document.getElementById("lblMensaje").textContent = "Debe ingresar el usuario";
+            LimpiarCampos();
+            return false;
+        }
+
+        if(document.getElementById("user").value == "user"){
+            document.getElementById("lblMensaje").textContent = "El usuario user ya existe";
+            LimpiarCampos();
+            return false;
+        }
+
+        if(document.getElementById("password").value == ""){
+            document.getElementById("lblMensaje").textContent = "Debe ingresar la contraseña";
+            LimpiarCampos();
+            return false;
+        }
+        debugger;
+        regex = /^[a-z0-9_-]{8,16}$/;
+        if(regex.test(document.getElementById("password").value)){
+            document.getElementById("lblMensaje").textContent = "Contraseña incorrecta";
+            LimpiarCampos();
+            return false;
+        }
+
+        return true;
+    }
+
+    function LimpiarCampos(){
+        document.getElementById("user").value = "";
+        document.getElementById("password").value = "";
+    }
+</script>
